@@ -1,5 +1,9 @@
 package Midterms_group_act1;
 
 public class Permanent extends Employee{
-//LOGIC
+    public Permanent(String name, float annualSalary, int yearStarted, int idNum, String employeeStatus) {
+        super(name, annualSalary, yearStarted, idNum, employeeStatus);
+    }
+
+    //Add methods unique to permanent
 }

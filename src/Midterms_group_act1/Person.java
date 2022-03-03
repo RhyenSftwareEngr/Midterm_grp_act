@@ -5,18 +5,22 @@ public class Person {
     private String name;
 
     public Person(){
-        name = "No name yet";
+        this.name = "No name yet";
     }
-    public Person(String n){
-        name = n;
+
+    public Person(String name){
+        this.name = name;
     }
+
     public void setName(String newName){
-        name = newName;
+        this.name = newName;
     }
+
     public String getName(){
-        return name;
+        return this.name;
     }
+
     public void print(){
-        System.out.println("Name:" + name);
+        System.out.println("Name:" + this.name);
     }
 }

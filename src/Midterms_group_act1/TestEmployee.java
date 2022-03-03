@@ -1,37 +1,66 @@
 package Midterms_group_act1;
+
 import java.util.Scanner;
 public class TestEmployee {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        Employee[] workers;
 
-        Employee fetch_Employee = new Employee();
+        int numberOfEmployees;
+        int numberPermanent;
+        int idNum;
+        String name;
+        float annualSalary;
+        int yearStarted;
 
+        Permanent[] pWorkers;
+        Contractual[] cWorkers;
 
         System.out.print("How many Employees you want to check?");
-        workers = new Employee[Integer.parseInt(scanner.nextLine())];
+        numberOfEmployees = Integer.parseInt(scanner.nextLine());
+        System.out.print("Enter amount of Permanent Employees: ");
+        numberPermanent = Integer.parseInt(scanner.nextLine());
+        pWorkers = new Permanent[numberPermanent];
+        cWorkers = new Contractual[numberOfEmployees - numberPermanent];
 
-        for (int count = 0; count < workers.length; count++) {
-            System.out.println(String.format("Enter credentials for Employee %d", count + 1));
+        for (int count = 0; count < numberOfEmployees; count++) {
 
+            if (count < numberPermanent)
+                System.out.printf("\nEnter credentials for Permanent Employee %d%n", count + 1);
+            else
+                System.out.printf("\nEnter credentials for Contractual Employee %d%n", count + 1 - numberPermanent);
 
-            System.out.print("Enter company Id: ");
-            fetch_Employee.setId_num(Integer.parseInt(scanner.nextLine()));
+            System.out.print("\nEnter company ID: ");
+            idNum = Integer.parseInt(scanner.nextLine());
+//            idNum = count;
 
-            System.out.print("Enter Employee name ");
-            fetch_Employee.setName(scanner.nextLine());
+            System.out.print("\nEnter employee name: ");
+            name = scanner.nextLine();
+//            name = "Test";
 
-            System.out.print("Enter Annual Salary ");
-            fetch_Employee.setAnnual_salary(Integer.parseInt(scanner.nextLine()));
+            System.out.print("\nEnter annual salary: ");
+            annualSalary = Integer.parseInt(scanner.nextLine());
+//            annualSalary = 123231.4F;
 
-            System.out.print("Enter Year started ");
-            fetch_Employee.setYear_started(Integer.parseInt(scanner.nextLine()));
+            System.out.print("\nEnter year started: ");
+            yearStarted = Integer.parseInt(scanner.nextLine());
+//            yearStarted = 1999;
 
-//            fetch_Employee.print();
+            if (count < numberPermanent)
+                pWorkers[count] = new Permanent(name, annualSalary, yearStarted, idNum, "Permanent");
+            else
+                cWorkers[count-numberPermanent] = new Contractual(name, annualSalary, yearStarted, idNum, "Contractual");
         }
 
+        //Just for testing
+        for (Permanent x:pWorkers) {
+            x.print();
+        }
 
+        for (Contractual y:cWorkers) {
+            y.print();
+        }
+
+        //Please add comments
     }
-
 }
 
