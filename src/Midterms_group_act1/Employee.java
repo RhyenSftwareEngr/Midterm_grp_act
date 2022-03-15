@@ -5,13 +5,13 @@ public class Employee extends Person {
     private String employeeStatus;
     private float annualSalary;
     private int yearStarted;
-    private int idNum;
+    private String idNum;
 
     public Employee() {
         //For instantiating Employee class without adding new data
     }
 
-    public Employee(String name, float annualSalary, int yearStarted, int idNum, String employeeStatus) {
+    public Employee(String name, float annualSalary, int yearStarted, String idNum, String employeeStatus) {
         super(name);
         
         this.annualSalary = annualSalary;
@@ -25,7 +25,7 @@ public class Employee extends Person {
     public void print(){
         System.out.println("Employee's data:");
         System.out.println("\tEmployee's name: " + this.getName() + "\n\tAnnual salary: "+ this.annualSalary +
-                "\n\tYear started to work: "+ this.yearStarted + "\n\tCompany id number: "+ this.idNum +
+                "\n\tYear started to work: "+ this.yearStarted + "\n\tCompany id number: EMP"+ this.idNum +
                 "\n\tStatus: " + this.employeeStatus);
     }
     
@@ -45,11 +45,11 @@ public class Employee extends Person {
         return this.yearStarted;
     }
 
-    public void setIdNum(int idNum) {
+    public void setIdNum(String idNum) {
         this.idNum = idNum;
     }
 
-    public int getIdNum() {
+    public String getIdNum() {
         return this.idNum;
     }
 

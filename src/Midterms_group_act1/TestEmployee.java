@@ -7,7 +7,7 @@ public class TestEmployee {
 
         int numberOfEmployees;
         int numberPermanent;
-        int idNum;
+        String idNum;
         String name;
         float annualSalary;
         int yearStarted;
@@ -29,9 +29,13 @@ public class TestEmployee {
             else
                 System.out.printf("\nEnter credentials for Contractual Employee %d%n", count + 1 - numberPermanent);
 
-            System.out.print("\nEnter company ID: ");
-            idNum = Integer.parseInt(scanner.nextLine());
-//            idNum = count;
+            System.out.print("\nEnter company ID: EMP");
+            idNum = scanner.nextLine();
+            while (idNum.length() != 3) {
+                System.out.println("Invalid Value! Only type three digits.");
+                System.out.print("\nEnter company ID: EMP");
+                idNum = scanner.nextLine();
+            }
 
             System.out.print("\nEnter employee name: ");
             name = scanner.nextLine();

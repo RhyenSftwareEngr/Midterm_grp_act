@@ -1,7 +1,7 @@
 package Midterms_group_act1;
 
 public class Permanent extends Employee{
-    public Permanent(String name, float annualSalary, int yearStarted, int idNum, String employeeStatus) {
+    public Permanent(String name, float annualSalary, int yearStarted, String idNum, String employeeStatus) {
         super(name, annualSalary, yearStarted, idNum, employeeStatus);
     }
 
